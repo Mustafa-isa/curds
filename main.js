@@ -20,5 +20,5 @@ function totalPrice() {
     total.style.background = "red";
   }
 }
- 
+totalPrice()
 //get total of product
