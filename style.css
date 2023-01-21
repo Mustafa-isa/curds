@@ -110,9 +110,13 @@ table th {
     font-size: 10px;
 
 }
-@media(max-widh:767px){
+@media(max-width:767px){
     .search-conten{
-        display: block;
+        flex-direction: column;
+        
+    }
+    .search-conten button{
+        width: 100%;
         
     }
 }
