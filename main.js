@@ -23,11 +23,10 @@ function totalPrice() {
 //get total of product
 //#################################################################################
 //create data
-submit.addEventListener('click', createProduct)
 
-function createProduct(){
+
+ submit.onclick=function(){
 let product ={
-  title:title.value,
   price:price.value,
   taxes :taxes.value,
   ads :ads.value,
