@@ -35,8 +35,6 @@ let product ={
   total:total.innerHTML,
   count:count.value,
   catogrey:catogrey.value
-
-
 }
 console.log(product)
 }
