@@ -1,15 +1,14 @@
 //SATRTING CODE............
-const title = document.getElementById("title");
-const price = document.getElementById("price");
-const taxes = document.getElementById("tax");
-const ads = document.getElementById("ads");
-const discount = document.getElementById("dis");
-const total = document.querySelector(".totle");
-const count = document.getElementById("count");
-const catogrey = document.getElementById("catogry");
-const search = document.getElementById("search");
-const color= document.getElementById('color')
-
+let title = document.getElementById("title");
+letprice = document.getElementById("price");
+let taxes = document.getElementById("tax");
+let ads = document.getElementById("ads");
+let discount = document.getElementById("dis");
+let total = document.querySelector(".totle");
+let count = document.getElementById("count");
+let catogrey = document.getElementById("catogry");
+let submit =document.getElementById('btn');
+let arr =[]
 function totalPrice() {
   let result;
   if (price.value != "") {
@@ -18,7 +17,26 @@ function totalPrice() {
     total.style.background = "#040";
   } else {
     total.style.background = "red";
+    price=""
   }
 }
-totalPrice()
 //get total of product
+//#################################################################################
+//create data
+submit.addEventListener('click', createProduct)
+
+function createProduct(){
+let product ={
+  title:title.value,
+  price:price.value,
+  taxes :taxes.value,
+  ads :ads.value,
+  discount:discount.value,
+  total:total.innerHTML,
+  count:count.value,
+  catogrey:catogrey.value
+
+
+}
+console.log(product)
+}
