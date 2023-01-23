@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <i class="fa-solid fa-moon" id="color"></i>
+      <div class="content-head">
+        <h1>curds</h1>
+        <p>product mangement system</p>
+      </div>
+      <input type="text" id="address" placeholder="title" />
+      <div class="price-flex">
+        <input onkeyup="totalPrice()" type="number" id="price" placeholder=" price" />
+        <input onkeyup="totalPrice()"type="number" id="tax" placeholder="tax" />
+        <input onkeyup="totalPrice()" type="number" id="ads" placeholder="ads" />
+        <input onkeyup="totalPrice()" type="number" id="dis" placeholder=" discount" />
+        <small onkeyup="totalPrice()" class="totle"></small>
+      </div>
+      <input type="number" id="count" placeholder=" count" />
+      <input type="text" id="catogry" placeholder="catogry" />
+      <button  id="btn">create</button>
+      <div class="search">
+        <input type="text" id="search " placeholder="search" />
+        <div class="search-conten">
+          <button id="searchTitle">search by title</button>
+          <button id="searchCatogry">search by catogry</button>
+        </div>
+      </div>
+      <div class="output">
+        <table>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>catogrey</th>
+            <th><button id="update">update</button></th>
+            <th><button id="delete">delete</button></th>
+          </tr>
+          <tbody id="tbody">
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
