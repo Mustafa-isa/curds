@@ -66,7 +66,7 @@ function showData(){
   for(let i=0 ;i< arr.length ;i++){
 tabel += `<tr>
 <td>${i}</td>
-<td>${arr[i].address}</td>
+<td>${arr[i].address }</td>
 <td>${arr[i].price}</td>
 <td>${arr[i].taxes}</td>
 <td>${arr[i].ads}</td>
@@ -76,7 +76,7 @@ tabel += `<tr>
 <td><button id="update">update</button></td>
 <td><button id="delete" onclick=delet(${i})>delete</button></td>
 </tr>`
-tbody.innerHTML=tabel
+tbody.innerHTML= tabel
 }
 }
 showData()
@@ -85,5 +85,5 @@ function delet(i){
   arr.splice(i,1)
   localStorage.product=JSON.stringify(arr)
   showData()
-  
+
 }
