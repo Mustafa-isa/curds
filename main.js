@@ -8,6 +8,7 @@ let total = document.querySelector(".totle");
 let count = document.getElementById("count");
 let catogrey = document.getElementById("catogry");
 let submit =document.getElementById('btn');
+let tbody=document.getElementById("tbody")
 //local storage
 let arr
 if(localStorage.product){
@@ -47,6 +48,7 @@ address:title.value ,
 arr.push(product)
 localStorage.setItem("product" ,JSON.stringify(arr))
 emptyFilds()
+showData()
 }
 function emptyFilds(){
   
@@ -58,4 +60,30 @@ discount.value=""
 total.innerHTML=""
 count.value=""
 catogrey.value=""
+}
+function showData(){
+  let tabel =''
+  for(let i=0 ;i< arr.length ;i++){
+tabel += `<tr>
+<td>${i}</td>
+<td>${arr[i].address}</td>
+<td>${arr[i].price}</td>
+<td>${arr[i].taxes}</td>
+<td>${arr[i].ads}</td>
+<td>${arr[i].discount}</td>
+<td>${arr[i].total}</td>
+<td>${arr[i].catogrey}</td>
+<td><button id="update">update</button></td>
+<td><button id="delete" onclick=delet(${i})>delete</button></td>
+</tr>`
+tbody.innerHTML=tabel
+}
+}
+showData()
+
+function delet(i){
+  arr.splice(i,1)
+  localStorage.product=JSON.stringify(arr)
+  showData()
+  
 }
