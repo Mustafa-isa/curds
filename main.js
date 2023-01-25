@@ -9,6 +9,8 @@ let count = document.getElementById("count");
 let catogrey = document.getElementById("catogry");
 let submit =document.getElementById('btn');
 let tbody=document.getElementById("tbody")
+let deletdiv= document.getElementById("delete")
+let btnDeleteAll =document.getElementById('deleteall')
 //local storage
 let arr
 if(localStorage.product){
@@ -78,6 +80,9 @@ tabel += `<tr>
 </tr>`
 tbody.innerHTML= tabel
 }
+if(arr.length > 0){
+deletdiv.innerHTML =`<button id="deleteall" onclick =deleteAll() >delete all ${arr.length}</button>`
+}
 }
 showData()
 
@@ -86,4 +91,10 @@ function delet(i){
   localStorage.product=JSON.stringify(arr)
   showData()
 
+}
+//delete all data exist in page
+ function deleteAll(){
+  localStorage.clear()
+  arr.splice(0)
+  showData()
 }

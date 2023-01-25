@@ -124,3 +124,10 @@ table th {
         
     }
 }
+#deleteall
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    font-size: 30px;
+}
