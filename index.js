@@ -18,4 +18,8 @@ localStorage.setItem('info' , userinf)
 else{
     alert('pleace enter your user name and passwords')
 }
+changeDir()
+}
+function changeDir(){
+    window.location.href='main.html'
 }
