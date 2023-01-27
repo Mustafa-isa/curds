@@ -47,7 +47,14 @@ address:title.value ,
   count:count.value,
   catogrey:catogrey.value
 }
-arr.push(product)
+if(product.count > 1){
+  for(let i=0 ;i<product.count ;i++){
+    arr.push(product)
+  }
+}else{
+  arr.push(product)
+}
+
 localStorage.setItem("product" ,JSON.stringify(arr))
 emptyFilds()
 showData()
@@ -98,3 +105,4 @@ function delet(i){
   arr.splice(0)
   showData()
 }
+///SATRTING
