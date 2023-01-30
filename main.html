@@ -30,8 +30,8 @@
       <div class="search">
         <input type="text" id="search " placeholder="search" />
         <div class="search-conten">
-          <button id="searchTitle">search by title</button>
-          <button id="searchCatogry">search by catogry</button>
+          <button onclick="searchFun(this.id)" id="searchTitle">search by title</button>
+          <button onclick="searchFun(this.id)" id="searchCatogry">search by catogry</button>
         </div>
       </div>
       <div class="output">
@@ -46,7 +46,7 @@
             <th>discount</th>
             <th>total</th>
             <th>catogrey</th>
-            <th><button id="update">update</button></th>
+            <th><button  id="update">update</button></th>
             <th><button id="delete">delete</button></th>
           </tr>
           <tbody id="tbody">

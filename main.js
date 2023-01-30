@@ -11,6 +11,10 @@ let submit =document.getElementById('btn');
 let tbody=document.getElementById("tbody")
 let deletdiv= document.getElementById("delete")
 let btnDeleteAll =document.getElementById('deleteall')
+let serachInput = document.getElementById("search")
+console.log(serachInput)
+let mode ='create'
+let ind
 //local storage
 let arr
 if(localStorage.product){
@@ -47,13 +51,22 @@ address:title.value ,
   count:count.value,
   catogrey:catogrey.value
 }
-if(product.count > 1){
-  for(let i=0 ;i<product.count ;i++){
+if( mode ==='create'){
+  if(product.count > 1){
+    for(let i=0 ;i<product.count ;i++){
+      arr.push(product)
+    }
+  }else{
     arr.push(product)
   }
+  
 }else{
-  arr.push(product)
+ arr[ind]= product
+ mode ='create'
+ count.style.display="block"
+ submit.innerHTML= 'create'
 }
+
 
 localStorage.setItem("product" ,JSON.stringify(arr))
 emptyFilds()
@@ -82,7 +95,7 @@ tabel += `<tr>
 <td>${arr[i].discount}</td>
 <td>${arr[i].total}</td>
 <td>${arr[i].catogrey}</td>
-<td><button id="update">update</button></td>
+<td><button onclick="updateProduct(${i})"  id="update">update</button></td>
 <td><button id="delete" onclick=delet(${i})>delete</button></td>
 </tr>`
 tbody.innerHTML= tabel
@@ -105,4 +118,29 @@ function delet(i){
   arr.splice(0)
   showData()
 }
-///SATRTING
+///SATRTING updating
+function updateProduct(i){
+  title.value  =arr[i].address
+  price.value =arr[i].price
+  taxes.value = arr[i].taxes
+  ads.value = arr[i].ads
+  discount.value = arr[i].discount
+  catogrey.value= arr[i].catogrey
+  totalPrice()
+  count.style.display="none"
+  submit.innerHTML= 'update'
+  ind =i
+  mode ='update'
+
+}
+let search ='title'
+function searchFun( id){
+
+  if(id ==="searchTitle"){
+    search ='title'
+  
+  }else{
+    search ='catogry'
+  
+  }
+}
