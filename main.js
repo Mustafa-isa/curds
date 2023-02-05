@@ -11,8 +11,7 @@ let submit =document.getElementById('btn');
 let tbody=document.getElementById("tbody")
 let deletdiv= document.getElementById("delete")
 let btnDeleteAll =document.getElementById('deleteall')
-let serachInput = document.getElementById("search")
-console.log(serachInput)
+
 let mode ='create'
 let ind
 //local storage
@@ -131,16 +130,21 @@ function updateProduct(i){
   submit.innerHTML= 'update'
   ind =i
   mode ='update'
+ 
 
 }
 let search ='title'
 function searchFun( id){
 
+  let serachInput = document.querySelector("search-conten")
+  serachInput.value ='mm'
+  console.log(serachInput)
   if(id ==="searchTitle"){
     search ='title'
-  
+  console.log(search)
   }else{
     search ='catogry'
-  
+    console.log(search)
   }
 }
+//////////
